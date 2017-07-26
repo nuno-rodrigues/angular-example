@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="src/angular.min.js"></script>
+
+<!-- 
+https://www.w3schools.com/angular/angular_directives.asp
+-->
+
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        {{ firstName + " " + lastName }}
+
+        <div w3-test-directive></div>
+
+    </div>
+
+    <script src="src/myApp.js"></script>
+    <script src="src/myCtrl.js"></script>
+
+    <script>
+        app.directive("w3TestDirective", function() {
+            return {
+                template: "I was made in a directive constructor!"
+            };
+        });
+    </script>
+
+</body>
+
+</html>

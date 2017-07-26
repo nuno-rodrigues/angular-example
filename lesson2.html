@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<script src="src/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="myApp" ng-init="myCol='lightblue';quantity=1;cost=5;firstName1='John';lastName1='Doe';person={firstName:'John',lastName:'Doe'};points=[1,15,19,2,40]" ng-controller="myCtrl">
+
+        <div>
+            <input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+        </div>
+
+        <div>
+            <p>First Name: <input type="text" ng-model="firstName"></p>
+            <p>Last Name: <input type="text" ng-model="lastName"></p>
+            <p>Name: {{firstName + " " + lastName}}</p>
+            <p>The name is: {{ firstName1 + " " + lastName1 }}</p>
+            <p>The name is: {{ person.firstName }}</p>
+            <p>The position 1 of the array: {{ points[1] }}</p>
+            <p>The multiplication of to numbers of arrays: {{ points[1] * points[2] }}</p>
+        </div>
+
+        <div>
+
+            <p>Total in dollar: $ {{ quantity * cost }}</p>
+            <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+
+        </div>
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        });
+    </script>
+
+
+</body>
+
+</html>
